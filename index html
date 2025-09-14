@@ -1,0 +1,19 @@
+<script>
+    function actualizarCuentaAtras() {
+      const ahora = new Date();
+      const medianoche = new Date();
+      medianoche.setHours(24, 0, 0, 0);
+
+      const diferencia = medianoche - ahora;
+
+      const horas = Math.floor(diferencia / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").textContent = 
+        `${horas}h ${minutos}m ${segundos}s  hasta las listas`;
+    }
+
+    setInterval(actualizarCuentaAtras, 1000);
+    actualizarCuentaAtras();
+  </script>
