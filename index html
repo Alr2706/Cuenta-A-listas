@@ -1,19 +1,24 @@
+<section id="countdown">
+  <h2>⏳ Cuenta atrás hasta la medianoche</h2>
+  <p id="timer" style="font-size:1.5rem; font-weight:bold; text-shadow:2px 2px 5px black;"></p>
+</section>
+
 <script>
-    function actualizarCuentaAtras() {
-      const ahora = new Date();
-      const medianoche = new Date();
-      medianoche.setHours(24, 0, 0, 0);
+  function actualizarCuentaAtras() {
+    const ahora = new Date();
+    const medianoche = new Date();
+    medianoche.setHours(24, 0, 0, 0);
 
-      const diferencia = medianoche - ahora;
+    const diferencia = medianoche - ahora;
 
-      const horas = Math.floor(diferencia / (1000 * 60 * 60));
-      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+    const horas = Math.floor(diferencia / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-      document.getElementById("timer").textContent = 
-        `${horas}h ${minutos}m ${segundos}s  hasta las listas`;
-    }
+    document.getElementById("timer").textContent = 
+      `${horas}h ${minutos}m ${segundos}s 🔥 hasta la medianoche 💀`;
+  }
 
-    setInterval(actualizarCuentaAtras, 1000);
-    actualizarCuentaAtras();
-  </script>
+  setInterval(actualizarCuentaAtras, 1000);
+  actualizarCuentaAtras();
+</script>
